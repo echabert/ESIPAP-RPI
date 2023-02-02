@@ -25,7 +25,7 @@ The program to design and to code must be able to read data, acquired by a senso
        - on Linux/MacOSX machines, the default compiler is **g++**
    - **Text editor**: feel free to use the editor of our choice:
        - on the Linux virtual machine, several editors are available including emacs, gedit, nedit, vi/vim, ...
-   - **Git**: requires to have an accound on [github](https://github.com/)
+   - **Git**: requires to have an account on [github](https://github.com/)
 
 ## Instructions
 
@@ -189,16 +189,17 @@ This imply that variables of a given measurement (once per line) are separated b
 
  A list of measurements is proposed on the table below. It would be interested for analysis purpose. Take de delay of 1 sec by default.
 
- |Name | Duration [min] | Comments|
- |Stable conditions | 5 | |
- |High rate   | 0.25 | scan short delay [ms or micros] | 
- |Humidity    | 3    | blow on the SenseHat board after 30'|
- |Temperature | 3    | run an air dryer after 30' |
- |Activity - 1| 4    | run *hot.py* |
- |Activity - 2| 4    | launch *video.avi* |
- |Activity - 3| 4    | run *hot.py* - SenseHat on top of RPI |
- |Activity - 4| 4    | launch *video.avi* - SenseHat on top of RPI |
- |Outside     | 6    | move the setup from inside to outside |
+ |Name | Duration [min] | Comments |
+ | :--- | :---: | :--- |
+ | Stable conditions | 5 | |
+ | High rate    | 0.25 | scan short delay [ms or micros] | 
+ | Humidity     | 3    | blow on the SenseHat board after 30'|
+ | Temperature  | 3    | run an air dryer after 30' |
+ | Activity - 1 | 4    | run *hot.py* |
+ | Activity - 2 | 4    | launch *video.avi* |
+ | Activity - 3 | 4    | run *hot.py* - SenseHat on top of RPI |
+ | Activity - 4 | 4    | launch *video.avi* - SenseHat on top of RPI |
+ | Outside      | 6    | move the setup from inside to outside |
 
 
 ### Step 4 (optional): Display with the LED matrix
