@@ -43,7 +43,7 @@ This is a small summary of the goal of each class:
   - The class *PsychrometricCalculator* must compute the thermics properties of the humid air from the temperature and relative humidity inputs. Through this implementation, the developer will pratice the coding of mathematical formulas.
   - The class *PixelWriter* must allow to display patterns, letters, sentences on the 8x8 pixel array of the SenseHat board.
 
-Please choose one of this class to implement and specify your choice on this [form](https://docs.google.com/forms/d/e/1FAIpQLSeqoWcfVSY4aO8FlfHdYBqJdOmztgNeQJa1ihJvOu0r5eUAzQ/viewform?usp=sf_link)
+Please choose one of this class to implement and specify your choice on this [form](https://forms.gle/AsAv3NHkhvvog5K78)
 
 ### Step 2: Implementing the class chosen
 
