@@ -18,13 +18,10 @@ class implementation must be tested in a main program.
 
 ## Tools used
    - **Compiler**: 
-       - on Linux/MacOSX machines, the default compiler is **g++**. Alternatively, **clang** can also be used.
-	   - on Windows machines, we use Visual Studio 2013 compiler, named **cl**.
+       - the default compiler is **g++**.
    - **Text editor**: feel free to use the editor of our choice:
-       - on the Linux virtual machine, several editors are available including emacs, gedit, nedit, vi/vim, ...
-	   - on Windows machines, the Visual Studio IDE (Integrated Development Environment) is recommended or a smart text editor such as [NotePad++](https://notepad-plus-plus.org/downloads/).   
-   - **Git**: requires to have an accound on [github](https://github.com/)
-   - **Doxygen**: this tool must be *a priori* installed on your machine.
+       - several editors are available including emacs, gedit, nedit, vi/vim, ...
+   - **Doxygen**: this tool is installed on the setup.
 
 ## Instructions
 
@@ -32,51 +29,11 @@ In order to ease the realization of this computing session, it has been decompos
 
 ### Step 0: Preparing your work environment
 
-#### Step 0.1: Updating the instructions 
-
-You must access to the last version of our instructions order to do the computing sessions. Please follow the instructions in order to have the updated code.
-
-   - Opening a new console session:
-     - On Linux/macOSX machines, you must click on the icon of the Terminal.
-	 - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
-
-   - Entering the working folder
-     - On Linux/macOSX machines, you must issue the following commands:
-       ```
-          cd ~/esipap_instructions
-       ```
-     - On Windows machines, you must issue the following commands:	   
-        ```
-		  cd C:\esipap_instructions
-        ```
-   - Update our repository by typing the command:
-   ```
-      git pull
-   ```
-
-#### Step 0.2: Creating your working folder for Computing Session 2
-
-  - In a console session, entering the folder ```ESICppCS``` by issuing the command lines:
-	   - On Linux/MacOSX machines: ```cd ~/esipap_sessions/ESICppCS```
-	   - On Windows machines: ```cd C:\esipap_sessions\ESICppCS```
-	   
   - Creating a folder devoted to Computing Session 2 code: 
 	```
 	   mkdir Session2
 	   cd Session2
 	```
-	
-  - In the folder ```Session2```, creating a new text file called ```readme.txt``` containing the sentence ```Folder corresponding to ESIPAP-2021 Computing Session 2```
-	
-  - Telling Git that you have added a new file by issue the command line in the console:
-      ```git add readme.txt```
-	  
-  - Recording the changes to the local repository with the following command:
-	  ```git commit -m 'add readme.txt file` readme.txt```
-	  
-  - Propagating the changes to the remote repository with the following command:
-	  ```git push```
-
 
 ### Step 1: Choosing a class to develop
 
@@ -104,7 +61,7 @@ Implement the class chosen by considering the specifications which are here:
 
 Annotation and comments inside the code is very useful for the understanding. In order to increase the documentation level, it is also possible to generate automatically reference documentation by reading the syntax and the annotations of the code. Whereas some documentation generators such as *Javadoc* are specific to one programming language, the *Doxygen* program has the advantage to be used for plenty languages.
 
-#### Step 3.1: Running Doxygen on Linux/MacOSX
+#### Step 3.1: Running Doxygen 
 
   - Doxygen must be callable from any place. Open a new console session and check with the command below that Doxygen is properly installed: <br/>
   ```doxygen --version```  
@@ -172,19 +129,6 @@ DOT_MULTI_TARGETS = YES
 ```
 doxygen doxygen.cfg
 ```
-
-#### Step 3.1: Running Doxygen on Windows
-
-On Windows machines, the previous instructions (devoted to Linux) can be used. You need first to put the folder `C:\Program Files\doxygen\bin` in the *PATH* environment variable.<br/>
-
-Alternatively, the user can use the program *Doxywizard*. The following instructions explain you how to use it:
-  - In the main box, specifiy the *working directory from which doxygen will run*, the *project name*, the *source cord directory* and the *destination directory*. Check also the box called *Scan recursively*.<br/>
-    ![wizard1](../doc/session2/doxywizard1.png)
-  - In the tab *Wizard*, click on the topic *Mode*. Then select *all entities* and check the box *Include cross-referenced source code in the output*.<br/>
-    ![wizard2](../doc/session2/doxywizard2.png)
-  - In the tab *Expert*, click on the topic *Build*. Then check these boxes: *EXTRACT_ALL*, *EXTRACT_PRIVATE*, *EXTRACT_PRIV_VIRTUAL*, *EXTRACT_PACKAGE*, *EXTRACT_STATIC*. <br/>
-    ![wizard3](../doc/session2/doxywizard3.png)  
-  - In the tab *Run*, click on *Run doxygen*.
   
 #### Step 3.2: Opening the HTML documentation
 
@@ -195,6 +139,3 @@ If the running is successful, folders *html* and *latex* are generated according
 Open the file *index.html* in the folder *html* with an internet browser and check the content. Add/adjust annotations in your code in order to improve
 the generated documentation.
 
-### Step 4: Saving and sharing your code
-
-Save your code and the Doxygen documentation by using properly the commands `git add`, `git commit` and `git push`.  
