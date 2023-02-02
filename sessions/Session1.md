@@ -1,27 +1,30 @@
-# Computing session 1: Introduction to development tools
+# Computing session 1: Acquiring data from sensors with a C++ program
 
 This session should be done in 3 hours.
 You are advised to refer the the C++ lectures and the links given below in order to
 achieve the goals of this computing session.
 
 ## Goals
-The subject of this first computing session is voluntarily simple in order to allow you to acquaint yourself with the environment and good practices of C++ development. During this session, you must write in C++ a program from scratch and step-by-step. The program to design and to code must be able to read data, acquired by a sensor device and encoded in a binary file, to decode them and to save them into a CSV which can be read by a spreadsheet like Excel or OpenCalc.
+The subject of this first computing session is voluntarily simple in order to allow you to acquaint yourself with the environment and good practices of C++ development. During this session, you must write in C++ a program from scratch and step-by-step. 
+
+ During this session, We will use the setup as a tool to monitor the environment conditions are it is often necessary in test bench or beam test while operating detector (such as silicon sensors by example).
+The program to design and to code must be able to read data, acquired by a sensor device and encoded in a binary file, to decode them and to save them into a CSV which can be read by a spreadsheet like Excel or OpenCalc.
 
 ## Skills to develop
   - Becoming familiar with C++ development environment (compiler, linker, text editor, ...).
   - Writing a simple C++ program.
-  - Manipulating bits in order to decipher data.
   - Using the STL classes for reading/writing a file and for displaying informations at the screen.
   - Structuring the program in functions and in different source files.
+  - Using classes developed by a third party.
+  - Compiling and linking a project made up of several source files
   - Saving and sharing the C++ code with a version-control system (Git in our cases).
+  - Improving the robustness of the code in order to prevent abnormal temrination or unexpected actions.
 
 ## Tools used
    - **Compiler**: 
-       - on Linux/MacOSX machines, the default compiler is **g++**. Alternatively, **clang** can also be used.
-	   - on Windows machines, we use Visual Studio 2013 compiler, named **cl**.
+       - on Linux/MacOSX machines, the default compiler is **g++**
    - **Text editor**: feel free to use the editor of our choice:
        - on the Linux virtual machine, several editors are available including emacs, gedit, nedit, vi/vim, ...
-	   - on Windows machines, the Visual Studio IDE (Integrated Development Environment) is recommended or a smart text editor such as [NotePad++](https://notepad-plus-plus.org/downloads/).   
    - **Git**: requires to have an accound on [github](https://github.com/)
 
 ## Instructions
@@ -35,55 +38,32 @@ At the end of each of them, you can compile and test our program before going fu
 
 You must access to the last version of our instructions order to do the computing sessions. Please follow the instructions in order to have the updated code.
 
-   - Opening a new console session:
-      - On Linux/macOSX machines, you must click on the icon of the Terminal.
-	  - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
-
-   - Creating a working folder:<br/>
-
-      - On Linux/macOSX machines, you must issue the following commands:<br/>
+   - Open a Terminal 
+   - Create a working folder:<br/>
         ```
         cd 
         mkdir esipap_instructions
 	    cd esipap_instructions
 		```
-        
-      - On Windows machines, you must issue the following commands:<br/>
-        ```
-        cd C:\
-        mkdir esipap_instructions
-	    cd C:\esipap_instructions
         ```
    - Download our main github repository by typing the command:
      ```
-     git clone https://github.com/echabert/ESIPAPCpp.git
+     git clone https://github.com/echabert/ESIPAP-RPI.git
      ```
      Comment: This last step can also be carried out by downloading a zip archive of the code (needed to be unzip)
-   https://github.com/echabert/ESIPAPCpp/archive/main.zip
+   https://github.com/echabert/ESIPAP-RPI/archive/main.zip
 
 #### Step 0.2: Creating your own repository
 
   - The goal of this section is to create a remote repository where you can save your results. You need to follow the instructions described in [the section Git Repository](../doc/git/GitRepository.md).
 
-   - Opening a new console session:
-     - On Linux/macOSX machines, you must click on the icon of the Terminal.
-	 - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
-
-   -  Once the repository is created, you can *download it* (*clone* it). To do that, first, opening a new console session:<br/>
-   
-      - On Linux/macOSX machines, you must issue the following commands:<br/>
+   - Open a Terminal:
         ```
         cd 
         mkdir esipap_sessions
 	    cd esipap_sessions
         ```
-      - On Windows machines, you must issue the following commands:<br/>	   
-         ```
-         cd C:\
-         mkdir esipap_sessions
-	     cd C:\esipap_sessions
-         ```
-   - Downloading your github repository by typing the command:
+   - Download your github repository by typing the command:
      ```
        git clone https://github.com/your_username/ESICppCS.git
      ```
@@ -93,9 +73,8 @@ You must access to the last version of our instructions order to do the computin
 #### Step 0.3: Creating your working folder for Computing Session 1
 
   - In a console session, entering the folder ```ESICppCS``` by issuing the command lines:
-	   - On Linux/MacOSX machines: ```cd ~/esipap_sessions/ESICppCS```
-	   - On Windows machines: ```cd C:\esipap_sessions\ESICppCS```
-	   
+	   ```cd ~/esipap_sessions/ESICppCS```
+  
   - Creating a folder devoted to Computing Session 1 code: 
 	```
 	   mkdir Session1
@@ -135,25 +114,10 @@ You must access to the last version of our instructions order to do the computin
        }	   
 	 ```
 	 
-   - The way to build this program depends on your machine:
-       - On Linux/MacOSX machines, the building (compilation + link + creation of an executable file called `helloworld`) can be done by typing the command `
+   - In order to build this program (compilation + link + creation of an executable file called `helloworld`) you need to type the command `
 	     ```
 		   g++ -o helloword helloworld.cpp
 		 ```
-	   - On Windows machines by using command lines, the building (compilation + link + creation of an executable file called `helloworld.exe`) can be done by typing the command `
-	     ```
-		   cl helloworld.cpp /link /out:helloworld.exe
-		 ```
-	   - On Windows machines by using the Visual Studio interface, the building (compilation + link + creation of an executable file called `helloworld.exe`) can be done by following the different steps:
-    	  - Creating a new *project* or *solution* and selecting a Win32 console program such as below:<br/>
-		      ![formula](../doc/session1/vs2013a.png)
-    	  - Selecting that you would like an empty solution as below<br/>
-		      ![formula](../doc/session1/vs2013b.png)
-		  - In the windows *Solution explorer*, making a right click on `Sources files`, then `Add`, `Create a new item` and finally `a cpp file`.<br/>
-		      ![formula](../doc/session1/vs2013c.png)
-          - Building the program by clicking on the button "Local Windows Debugger"	or using the shortcut CTRL+F5.	  
-		  
-
    - Executing the program:
        - On Linux/MacOSX machines: ```./helloworld```
 	   - On Windows machines by using command lines: ```helloworld```
@@ -170,117 +134,86 @@ You must access to the last version of our instructions order to do the computin
       - Propagating the changes to the remote repository with the following command:
 	  ```git push```
 	  
-### Step 2: Decoding a binary file by using STL classes
 
-The goal of this section is to design a program which allows you to open a file, decode a binary content and display the content at the screen.
+### Step 2: Handling the SenseHat board with C++ library and writing a acquisition program
 
-**Specifications of the program:** only one source file called `DataReader.cpp`
+ Technically, a C++ library called [RTIMULib](https://github.com/RPi-Distro/RTIMULib) has been developed and is installed on the setup.
+ It contains several classes useful to communicate with the SenseHat elements. In order to access those functionalities, it will be required to link this library during the compilation.
+ In the goal of simplifying the access to the SenseHat board, we have developed a new class called **SenseHat** which uses several classes contained in libRTIMULib.so.
 
-  - The code must open the binary file `sensor.dat` and check that the file is properly opened. This file can be found in:
-    - on Linux/MacOSX machines: `~/esipap_instructions/sessions/session1/sensor.dat`
-	- on Windows machines: `C:\esipap_instructions\sessions\session1\sensor.dat`
-	  
-  - The code must extract and store in memory the 7-byte data from the file. 
-     	  
-  - The code must decode the data. In order to achieve this task, the developer needs to know the data structure used to encode the content. It is given by the figure below. One acquisition corresponds to 7 bytes *i.e* 56 bits.<br/>
-       ![dataformat](../doc/session1/dataformat.png)
-    Data `EnergyData1` and `EnergyData2` are not enciphered. The decoding relation for the other data are given by the formula below.<br/>
-       ![formula](../doc/session1/formula.png)
-	   
-  - Finally, the code must display at the screen the decoded values.
-	
-**Instructions:**
+#### Step 2.1: Inclusion of the class SenseHat
 
-  - Writing the `DataReader.cpp` file.
-  - Building the program and creating an executable file.
-  - Launching the program and check that you obtain the following output.
-  	```
-	   Byte1=127  Byte2=255  Byte3=170  Byte4=40  Byte5=22  Byte6=140  Byte7=10
-	```
-	```
-	   E1=127  E2=255  T=44.9963[°C]  P=109972[Pa]  RH=54.902[%]
-	```
-  - Saving your code by using properly the commands `git add`, `git commit` and `git push`.
+ Open the header of the SenseHat class in order to understand its structure. 
+ Both the structure and the language keywords should have been presented during the leture.
+ If you have questions, you can directly contact the teachers.
+
+  - Extend the "Hello world" example by instantiating an object of the class **SenseHat** and by initializing it.
+  - Compile the program linking the executable with the library **libSenseHat.so**.
+  - "Automatize" the compilation by writing down the compilation commands in a bash script **mymake**. We will later learn how to create a **Makefile**
+
+#### Step 2.2: First acquisition program
+  By reading the header of the SenseHat class, you need to learn the available methods that will be useful to realize the tasks required below.
+
+  - Read 10 times both the temperatures measured by the pressure and the humidity sensors every second and display them on the terminal (using std::cout)/
+  - Make our program more configurable by asking the user the number of measurements and the delay.
   
-**Piece of advice:**
-  - You have to handle binary values and operations in C++. A small appendix in PDF can be read for this purpose: [Handling binary and bit values](session1/bits_appendix.pdf).
-  - Put some comments in your code in order to explain what you are doing.
-  - For displaying properly a the screen the unit `°C`, you can type `cout << "\370" << "C";`
+  Remarks:
+  - The delay can be generated by using a method of the class SenseHat. It uses the UNIX command sleep which use delay expressed in microseconds.
+  - Use std::cin to retrieve parameters entered by the user.
+  - It is also possible to retrieve values through the arguments given in the command line (arguments of the function main).
 
-### Step 3: Decoding a binary file with multiple data
 
-The previous file `sensor.dat` contents only one sensor acquisition. Now, we would like to extend the previous program to the reading of a 100-acquisition binary file. This file can be found here:
-  - on Linux/MacOSX machines: `~/esipap_instructions/sessions/session1/sensor2.dat`
-  - on Windows machines: `C:\esipap_instructions\sessions/session1\sensor2.dat`
+### Step 3: Exporting measurements
 
-The goal of this section is to design a program which allows you to open a file, decode a binary content and display the content at the screen.
+It is often useful to disentangle the acquisition program from the data analysis one. The goal of the acquisition program FirstDAQExport.cc to be written is to store data in a given numerical format. 
+For the sake of simplicity, we will store the data in a CSV (Comma Separated Value) format. 
+This imply that variables of a given measurement (once per line) are separated by a comma.
 
-**Specifications of the program:** only one source file called `DataReader.cpp`
-  - The code must extract the data from the 100-acquisition file `sensor2.dat`.
-  - The code must display them at the screen (one line an acquisition).
-  
-**Instructions:**
-  - Adapting the `DataReader.cpp` file.
-  - Building the program and creating an executable file.
-  - Saving your code by using properly the commands `git commit` and `git push`.  
-  
-### Step 4: Converting the binary file to a human-readable format
+  - Write a first version of the program that store in a CSV file the following values:
+     - the time in microseconds since the first measurement
+     - the pressure [bar]
+     - the relativity humidity
+     - the temperature measured by the pressure sensor [◦C]
+     – the temperature measured by the humidity sensor [◦C]
+     – both temperatures from the CPU and GPU of the Raspberry Pi [◦C]
+  - Protect the code against unavailable measurement by adding a default value (-9999), allowing a offline treatment
+  - Modify the program to write this functionnality as a function which takes as arguments the number of measurements and the delay.
+  - Split the project in 3 files: a file CSVExport.h and CSVExport.cc which contain respectively the prototype and the implement of the function as well as a main program which call the function.
+  - Write the compilation instructions in a script **mymake** and compile the project.
+  - Test if the program is working properly. The integrity of the CSV file can even be tested by loading it with **OpenOffice Cal**. Change the delimeter for CSV file in the configuration to use "," and not ";".
 
-The goal of this section is to produce a CSV file (Comma Separated Value) from the numerical values corresponding to the data. The produced CSV output file could later be tested by other program/applications such as `OpenOffice`or `Excel`.
+ ### Step 4: Measurement campaigns
 
-**Specifications of the program:** only one source file called `DataReader.cpp`
-   - The code must extract the data from the 100-acquisition file `sensor2.dat`.
-   - The code must display them at the screen (one line an acquisition).
-   - The code must open a new file in writing mode called `sensor2.csv` and write the data in a structured way: values separated by a comma, one line per entry into the CSV file.
+ Measurements in various conditions can be done, allowing dedicated analyzes in the next computing sessions. 
+ In order to facilitate the execution of several runs with varying conditions,modify the main program to read from the command line the delay, the number of measurements and the output csv filename.
 
-**Instructions:**
-  - Adapting the `DataReader.cpp` file.
-  - Building the program and creating an executable file.
-  - Running the executable file and checking the production of the file `sensor2.csv`.
-  - Comparing the size of the binary file and the CSV file. How can you intepret the difference?
-  - Opening the CSV file with a spreadsheet such as `Excel` or `OpenOffice` and producing one graphic with the temperature data for instance.
-  - Saving your code by using properly the commands `git commit` and `git push`. 
+ A list of measurements is proposed on the table below. It would be interested for analysis purpose. Take de delay of 1 sec by default.
 
-**Piece of advice:**
-  - You have to use several classes from the Standard Template Library (STL), in particular:
-    - [ofstream](http://www.cplusplus.com/reference/fstream/ofstream/) : a class which allow to write file
-  
-### Step 5: Using functions in your codes
+ |Name | Duration [min] | Comments|
+ |Stable conditions | 5 | |
+ |High rate   | 0.25 | scan short delay [ms or micros] | 
+ |Humidity    | 3    | blow on the SenseHat board after 30'|
+ |Temperature | 3    | run an air dryer after 30' |
+ |Activity - 1| 4    | run *hot.py* |
+ |Activity - 2| 4    | launch *video.avi* |
+ |Activity - 3| 4    | run *hot.py* - SenseHat on top of RPI |
+ |Activity - 4| 4    | launch *video.avi* - SenseHat on top of RPI |
+ |Outside     | 6    | move the setup from inside to outside |
 
-The goal of this section is to move the block of instructions that handle the binary decoding into a well-defined function in order to be reused in other applications if needed.
-In order to do this, you need to:
 
-**Specifications of the program:** only one source file called `DataReader.cpp`
-   - Defining properly the prototype of the function callled *Decoding* (return type and ordered list of arguments with there type). You have the freedom to design the prototype as you which.
-   - Implementing the function *Decoding*.
-   - Calling the function in the *main*.
+### Step 4 (optional): Display with the LED matrix
 
-**Instructions:**
-  - Adapting the `DataReader.cpp` file.
-  - Building the program and creating an executable file.
-  - Testing the program.
-  - Saving your code by using properly the commands `git commit` and `git push`.  
+The Sense Hat board is equiped with a LED matrix. It is possibe to change the color of each
+of the individual pixels via methods of the class SenseHat. 
+Functionnalities are available on the SenseHat class but remain basics.
+In the next session, it will be propose to develop a class to write sentences and numbers with the LED matrix.
+Meanwhile, in this section, you are free to use the LED matrix to display visual information playing directly with the individual pixels.
+Here is a list of possible small projects:
+ - represent the value of the measured observables (temperature, humidity) on a 8 LED line (you could use 2 different lines)
+ - use the range 0-64 pixels to reprensent the intensitiy of the temperature or humidity
+ - use the y-axis to represent the intensity while the x-axis is used to represent the time: evolution of the temperature or humidity vs time
+ - make the LED blinking if the measurement is above it a predefined threshold
+ - ...
 
-### Step 6: File splitting
 
-The goal of this section is to split the program into 3 files:
-  - An header file containing the prototype of the function: *Decode.h*
-  - A source file containing the definition of the function: *Decode.cpp*
-  - A main file containing the function main: *main.cpp*
 
-**Instructions:**
-  - Adapting the `DataReader.cpp` file.
-  - Building the program and creating an executable file.
-  - Testing the program.
-  - Saving your code by using properly the commands `git add`, `git commit` and `git push`.  
-  
-**Piece of advice:**
-   - The header files need to be protected against multiple inclusion.
-   - The compilation can be done in several step as there is 2 cpp files.
-
-### Optional Step: going further
-
-This last step is **not mandatory**. 
-If you have already finished the previous steps and want to go further, we provide you several options:
-   - Use arguments of the *main* function to pass the name of the input file into the command line.
-   - Compute basic statistics (mean and std-deviation) for each of the main variables and report them at the end of the execution.
