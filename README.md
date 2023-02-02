@@ -1,4 +1,4 @@
-# ESIPAP: Edition 2022 - Module 1
+# ESIPAP: Edition 2023 - Module 1
 #   Computing Session
 
 
@@ -14,23 +14,16 @@
   - [ROOT](https://root.cern.ch/)
 
 
-## Installation of the packages:
+## Environment
  
-The computing sessions requires to a fully-operational system with all the packages installed and configured. The preparation of your system must be done before the computing sessions: there will be no time during these sessions for installing the missing packages.
-Two solutions are proposed for having your system ready:
+  The computing sessions are based on a setup composed of a {\bf Raspberry Pi} 3 Model B+ and a add-on board called {\bf Sense Hat} which contain several sensors connected to the usal peripherical equipments (keyboard, mouse and screen).
+  The operating system is a {\bf Linux} distirbution called {\bf Raspbian}. 
+  The environment, including all required packages and configuraitons has been prepared by the teachers.
+  For the computing sessions, we will mainly use the {\bf terminal} and a text editors (many are available on the system such as nedit, emacs or vim).
+  In order to setup the environment in a terminal, you need to type the command:
 
-  - Solution 1: Downloading and using an image of a pre-configured Linux distribution with the help of the program VirtualBox. [Please follow these instructions](doc/install/VirtualBox.md).
-  - Solution 2: Installing step-by-step the required packages on your own system. The instructions will depend on the OS (Operator System): 
-    - [Windows](doc/install/Windows.md) NOT RECOMMENDED: do not work yet = need of a patch from the ROOT authors.
-    - [Windows](doc/install/Windows2.md) RECOMMENDED: using previous releases = ROOT 5 and Visual Studio 2013.
-    - [Linux](doc/install/Linux.md)
-    - [macOS](doc/install/macOS.md)
+  source /home/pi/tools/setup.sh
 
-## Check of the setup:
- 
-If you use the Solution 1 with the Linux image,  you can skip this section because the setup is already well configured. If you use the Solution 2, you need to check that everything works properly and that you are ready to begin the computing sessions. The instructions depend also on the OS (Operator System):
-  - [Windows](doc/check/Windows.md)
-  - [Linux/macOS](doc/check/Linux.md)
 	
 ## Creation of github account
 
@@ -41,9 +34,8 @@ We ask you to to it before the beginning of the sessions.
 ## List of computing sessions:
   - [Introduction](sessions/Introduction.pdf) and [Assessment skill list](sessions/assessment_skill_list.pdf)
   - Please fill the following [form](https://docs.google.com/spreadsheets/d/1ssG-T0dRIWDaClu9eo8neTFC3U66KB6rsW3GBtfAtyE/edit?usp=sharing) with the link to the github repository.
-  
-  
-  - [Session 1: Introduction to development tools](sessions/Session1.md)
+  git@github.com:echabert/ESIPAP-RPI.git
+  - [Session 1: Acquiring data from sensors with a C++ program](sessions/Session1.md)
   - [Session 2: Class development](sessions/Session2.md)
   - [Session 3: Project on environmental conditions](sessions/Session3.md)
   - [Session 4: ROOT](sessions/Session4.md)
