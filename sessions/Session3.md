@@ -15,77 +15,37 @@ The goal of this computing session is to combine the codes developed during the 
 
 ## Tools used
    - **Compiler**: 
-       - on Linux/MacOSX machines, the default compiler is **g++**. Alternatively, **clang** can also be used.
-	   - on Windows machines, we use Visual Studio 2013 compiler, named **cl**.
+       - the default compiler is **g++**.
    - **GNU Make**: relevant on UNIX/MacOS environment.
    - **Text editor**: feel free to use the editor of our choice:
-       - on the Linux virtual machine, several editors are available including emacs, gedit, nedit, vi/vim, ...
-	   - on Windows machines, the Visual Studio IDE (Integrated Development Environment) is recommended or a smart text editor such as [NotePad++](https://notepad-plus-plus.org/downloads/).   
-   - **Git**: requires to have an accound on [github](https://github.com/)
-   - **Doxygen**: this tool must be *a priori* installed on your machine.
+       - several editors are available including emacs, gedit, nedit, vi/vim, ...
+   - **Doxygen**: this tool is installed on the setup.
 
 ## Instructions
 
 ### Step 0: Preparing your work environment
 
-#### Step 0.1: Updating the instructions 
 
-You must access to the last version of our instructions order to do the computing sessions. Please follow the instructions in order to have the updated code.
-
-   - Opening a new console session:
-     - On Linux/macOSX machines, you must click on the icon of the Terminal.
-	 - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
-
-   - Entering the working folder
-     - On Linux/macOSX machines, you must issue the following commands:
-       ```
-          cd ~/esipap_instructions
-       ```
-     - On Windows machines, you must issue the following commands:	   
-        ```
-		  cd C:\esipap_instructions
-        ```
-   - Update our repository by typing the command:
-   ```
-      git pull
-   ```
-
-#### Step 0.2: Creating your working folder for Computing Session 3
-
-  - In a console session, entering the folder ```ESICppCS``` by issuing the command lines:
-	   - On Linux/MacOSX machines: ```cd ~/esipap_sessions/ESICppCS```
-	   - On Windows machines: ```cd C:\esipap_sessions\ESICppCS```
-	   
   - Creating a folder devoted to Computing Session 3 code: 
 	```
 	   mkdir Session3
 	   cd Session3
 	```
 	
-  - In the folder ```Session3```, creating a new text file called ```readme.txt``` containing the sentence ```Folder corresponding to ESIPAP-2021 Computing Session 3```
-
-  - Telling Git that you have added a new file by issue the command line in the console:
-      ```git add readme.txt```
-	  
-  - Recording the changes to the local repository with the following command:
-	  ```git commit -m 'add readme.txt file` readme.txt```
-	  
-  - Propagating the changes to the remote repository with the following command:
-	  ```git push```
-
 
 In order to ease the realization of this computing session, it has been decomposed into short steps.
 
 ### Step 2: Using functions and classes from a library
 
 The main goal is to create a new program with a main function aiming to read and analyze the data (temperature, pressure and humidity) supposely taken by the setup.
- - copy/paste the code developed during session 1 in order to read the binary data file and extract the temperature, pressure and humidity.
- - include in your project the two classes: **StatisticsCalculator** and **PsychrometricCalculator**. Normally, you have developed one class during Session 2. The code of the other class must be borrowed from one of your colleagues (borrow the code but also the doxygen doc).
- - at this step, it is advised to instantiate the classes **StatisticsCalculator** and **PsychrometricCalculator** in your ``main`` program and try to build (compile) the whole project.
+ - copy/paste the code developed during session 1 in order to read the temperature, pressure and humidity.
+ - include in your project the three classes: **StatisticsCalculator**, **PsychrometricCalculator** and **PixelWriter**. Normally, you have developed one class during Session 2. The code of the two other classes must be borrowed from one of your colleagues (borrow the code but also the doxygen doc).
+ - at this step, it is advised to instantiate the classes **StatisticsCalculator**, **PsychrometricCalculator** and **PixelWriter** in your ``main`` program which read SenseHat senesors and try to build (compile) the whole project.
  - with the class **PsychometricCalculator**, compute for each measure the dry temperature and the vapour pressure on top of all the other variables (energies etc ). 
  - with the class **StatisticsCalculator**, compute the relevant statistical quantities (min, max, mean, median, rms, std-dev) and dump them first at the screen.
  - save all corrected data (temperature, pressure, humidity, dry temperature and vapour pressure) then into a CSV file. The first value of each line will be the name of the variable, **i.e.** "energy1" etc.
-
+ - withe the class **PixelWriter**, display on the 8x8 LED matrix the mean temperature and the mean relative humidity.
+ 
 
 ### Step 3: Using GNU Makefile
 
@@ -130,6 +90,6 @@ Protect our code by checking that an argument was provided. If it is not the cas
 ### Step 6: Going further
 
 You can enrich you program in order to propose several options:
- - the code can check the extension of the file given as argument to know if the format is  binary  (.dat) or ascii (.csv). Adapt the code for the 2 cases
- - the user could specify the values of interest (s)he may to display using predefined key word such as "mean", "median",... for the class StatisticCalculator or "enthalpy" etc for the class PsychrometricCalculator
+ - the code can check the extension of the file given as argument to know if the format is  binary  (.dat) or ascii (.csv). Adapt the code for the 2 cases **PsychrometricCalculator** and **StatisticsCalculator**.
+- the user could specify the values of interest (s)he may to display using predefined key word such as "mean", "median",... for the class StatisticCalculator or "enthalpy" etc for the class PsychrometricCalculator
  - te user could also specify the name of the output file with the option -o
