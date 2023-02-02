@@ -80,9 +80,11 @@ You must access to the last version of our instructions order to do the computin
 
 ### Step 1: Choosing a class to develop
 
-In the context of a project, two classes must be implemented: *StatisticsCalculator* and *PsychrometricCalculator*. We will share the work by making two teams: one team will develop the class *StatisticsCalculator* and the other will develop the class *PsychrometricCalculator*. This is a small summary of the goal of each class:
+In the context of a project, three classes must be implemented: *StatisticsCalculator*, *PsychrometricCalculator* and *PixelWriter*. We will share the work by making three teams, each of them developping one of the class.
+This is a small summary of the goal of each class:
   - The class *StatisticsCalculator* must deal with a set of data and offer useful relevant statistical functions which can provide the average, the mediane, the standard deviation, ... Trough this implementation, the developer will pratice the manipulation of arrays.
   - The class *PsychrometricCalculator* must compute the thermics properties of the humid air from the temperature and relative humidity inputs. Through this implementation, the developer will pratice the coding of mathematical formulas.
+  - The class *PixelWriter* must allow to display patterns, letters, sentences on the 8x8 pixel array of the SenseHat board.
 
 Please choose one of this class to implement and specify your choice on this [form](https://docs.google.com/forms/d/e/1FAIpQLSeqoWcfVSY4aO8FlfHdYBqJdOmztgNeQJa1ihJvOu0r5eUAzQ/viewform?usp=sf_link)
 
@@ -91,7 +93,8 @@ Please choose one of this class to implement and specify your choice on this [fo
 Implement the class chosen by considering the specifications which are here:
   - specifications for [StatisticsCalculator](statistics_calculator.md)
   - specifications for [PsychrometricCalculator](psychrometric_calculator.md)
- 
+  - specifications for [PixelWriter](pixel_writer.md)
+
 **Piece of advice:**
   - The class implementation must be split in a header file `.h` and in a source file `.cpp`. You must be careful about what you put in the header file and what you put in the source file.
   - You must test your class implementation by creating a main source file `main.cpp` which uses the implemented class.
