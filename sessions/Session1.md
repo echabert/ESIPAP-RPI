@@ -22,10 +22,9 @@ The program to design and to code must be able to read data, acquired by a senso
 
 ## Tools used
    - **Compiler**: 
-       - on Linux/MacOSX machines, the default compiler is **g++**
+       - the default compiler is **g++**
    - **Text editor**: feel free to use the editor of our choice:
-       - on the Linux virtual machine, several editors are available including emacs, gedit, nedit, vi/vim, ...
-   - **Git**: requires to have an account on [github](https://github.com/)
+       - several editors are available including emacs, gedit, nedit, vi/vim, ...
 
 ## Instructions
 
@@ -53,27 +52,6 @@ You must access to the last version of our instructions order to do the computin
      Comment: This last step can also be carried out by downloading a zip archive of the code (needed to be unzip)
    https://github.com/echabert/ESIPAP-RPI/archive/main.zip
 
-#### Step 0.2: Creating your own repository
-
-  - The goal of this section is to create a remote repository where you can save your results. You need to follow the instructions described in [the section Git Repository](../doc/git/GitRepository.md).
-
-   - Open a Terminal:
-        ```
-        cd 
-        mkdir esipap_sessions
-	    cd esipap_sessions
-        ```
-   - Download your github repository by typing the command:
-     ```
-       git clone https://github.com/your_username/ESICppCS.git
-     ```
-     where your\_username as to be replaced by your username.
-     A password will be asked.
-
-#### Step 0.3: Creating your working folder for Computing Session 1
-
-  - In a console session, entering the folder ```ESICppCS``` by issuing the command lines:
-	   ```cd ~/esipap_sessions/ESICppCS```
   
   - Creating a folder devoted to Computing Session 1 code: 
 	```
@@ -81,17 +59,6 @@ You must access to the last version of our instructions order to do the computin
 	   cd Session1
 	```
 	
-  - In the folder ```Session1```, creating a new text file called ```readme.txt``` containing the sentence ```Folder corresponding to ESIPAP-2021 Computing Session 1```
-	
-  - Telling Git that you have added a new file by issue the command line in the console:
-      ```git add readme.txt```
-	  
-  - Recording the changes to the local repository with the following command:
-	  ```git commit -m 'add readme.txt file` readme.txt```
-	  
-  - Propagating the changes to the remote repository with the following command:
-	  ```git push```
-
 
 ### Step 1: Creating, building and running a 'Hello World!' program
 
