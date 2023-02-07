@@ -27,17 +27,10 @@ The agenda of the edition 2023 can be found [here](https://indico.cern.ch/event/
   ``` 
   source /home/esipap/setup.sh
   ```
-	
-## Creation of github account
 
-It will be required to create github repositories during the computing sessions.
-We ask you to to it before the beginning of the sessions.
-  - [Instruction to create a github account](doc/git/GitAccount.md)
 
 ## List of computing sessions:
   - [Introduction](sessions/Introduction.pdf) and [Assessment skill list](sessions/assessment_skill_list.pdf)
-  - Please fill the following [form](https://docs.google.com/spreadsheets/d/1ssG-T0dRIWDaClu9eo8neTFC3U66KB6rsW3GBtfAtyE/edit?usp=sharing) with the link to the github repository.
-  git@github.com:echabert/ESIPAP-RPI.git
   - [Session 1: Acquiring data from sensors with a C++ program](sessions/Session1.md)
   - [Session 2: Class development](sessions/Session2.md)
   - [Session 3: Project on environmental conditions](sessions/Session3.md)
