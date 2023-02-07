@@ -74,4 +74,4 @@ functions.
   
 ## Summary: the UML diagram 
 
-   ![wizard1](../doc/session2/psychrometric_uml.png)
+   ![wizard1](../doc/session2/prixelwriter_uml.png)
