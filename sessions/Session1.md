@@ -163,7 +163,7 @@ This imply that variables of a given measurement (once per line) are separated b
  | Outside      | 6    | move the setup from inside to outside |
 
 
-### Step 4 (optional): Display with the LED matrix
+### Step 5 (optional): Display measures with the LED matrix
 
 The Sense Hat board is equiped with a LED matrix. It is possibe to change the color of each
 of the individual pixels via methods of the class SenseHat. 
