@@ -19,13 +19,13 @@ The agenda of the edition 2023 can be found [here](https://indico.cern.ch/event/
 
 ## Environment
  
-  The computing sessions are based on a setup composed of a **Raspberry Pi** 3 Model B+ and a add-on board called **Sense Hat** which contain several sensors connected to the usal peripherical equipments (keyboard, mouse and screen).
-  The operating system is a **Linux** distirbution called **Raspbian**. 
-  The environment, including all required packages and configuraitons has been prepared by the teachers.
-  For the computing sessions, we will mainly use the **terminal** and a text editors (many are available on the system such as nedit, emacs or vim).
+  The computing sessions are based on a setup composed of a **Raspberry Pi** 3 Model B+ and a add-on board called **Sense Hat** which contains several sensors connected to usual peripherical equipments (keyboard, mouse and screen).
+  The operating system is a **Linux** distribution, based on the Debian 11 one, called **Raspberry Pi OS** (previously Raspbian). 
+  The environment, including all required packages and settings, has been prepared by the supervisors.
+  For the computing sessions, we will mainly use the **terminal** and a text editor (many are available on the system such as nedit, emacs or vim).
   In order to setup the environment in a terminal, you need to type the command:
   ``` 
-  source /home/pi/tools/setup.sh
+  source /home/esipap/setup.sh
   ```
 	
 ## Creation of github account
