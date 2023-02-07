@@ -111,14 +111,14 @@ This imply that variables of a given measurement (once per line) are separated b
      – both temperatures from the CPU and GPU of the Raspberry Pi [◦C]
   - Protect the code against unavailable measurement by adding a default value (-9999), allowing a offline treatment
   - Modify the program to write this functionnality as a function which takes as arguments the number of measurements and the delay.
-  - Split the project in 3 files: a file CSVExport.h and CSVExport.cc which contain respectively the prototype and the implementation of the function as well as a main program which call the function.
+  - Split the project in 3 files: a file CSVExport.h and CSVExport.cc which contain respectively the prototype and the implementation of the function as well as a main program main.cpp which call the function.
   - Write the compilation instructions in a script **mymake** and compile the project.
   - Test if the program is working properly. The integrity of the CSV file can even be tested by loading it with **OpenOffice Cal** (hint: change the delimeter for CSV file in the configuration to use "," and not ";").
 
  ### Step 4: Measurement campaigns
 
  Measurements in various conditions can be done, allowing dedicated analyzes in the next computing sessions. 
- In order to facilitate the execution of several runs with various conditions, modify the main program to read from the command line the delay, the number of measurements and the output CSV filename. ```Ex: .\main 0.25 10 myoutput.csv```
+ In order to facilitate the execution of several runs with various conditions, modify the main program to read from the command line the delay, the number of measurements and the output CSV filename. ```Ex: ./main 0.25 10 myoutput.csv```
 
  A list of measurements is proposed on the table below. It would be interested for analysis purpose. Take de delay of 1 sec by default.
 
