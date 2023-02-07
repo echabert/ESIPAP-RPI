@@ -171,10 +171,10 @@ Functionnalities are available on the SenseHat class but remain basics.
 In the next session, it will be proposed to develop a class to write sentences and numbers with the LED matrix.
 Meanwhile, in this section, you are free to use the LED matrix to display visual information playing directly with the individual pixels.
 Here is a list of possible small projects:
- - represent the value of the measured observables (temperature, humidity) on a 8 LED line (you could use 2 different lines)
- - use the range 0-64 pixels to reprensent the intensitiy of the temperature or humidity
- - use the y-axis to represent the intensity while the x-axis is used to represent the time: evolution of the temperature or humidity vs time
- - make the LED blinking if the measurement is above it a predefined threshold
+ - represent the value of the measured observables (temperature, humidity) on a 8 LED line (you could use 2 different lines).
+ - use the range 0-64 pixels to reprensent the intensitiy of the temperature or humidity.
+ - use the y-axis to represent the intensity while the x-axis is used to represent the time: evolution of the temperature or humidity vs time.
+ - make the LED blinking if the measurement is above it a predefined threshold.
  - ...
 
 
