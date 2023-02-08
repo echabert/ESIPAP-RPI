@@ -78,6 +78,7 @@ At the end of each of them, you can compile and test our program before going fu
 #### Step 2.1: Including the class SenseHat
 
  Open the header of the SenseHat class in order to study and understand its structure. 
+ You will find it at the address: *~/tools/sensehat/SenseHat.h*.
  Both the structure and the language keywords should have been presented during the lecture.
  If you have questions, you can directly contact the supervisors.
 
