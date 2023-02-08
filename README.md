@@ -37,3 +37,5 @@ The agenda of the edition 2023 can be found [here](https://indico.cern.ch/event/
   - [Session 4: ROOT](sessions/Session4.md)
 
 
+[Update for 2024](Update.md)
+

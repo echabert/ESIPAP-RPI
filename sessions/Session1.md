@@ -82,9 +82,9 @@ At the end of each of them, you can compile and test our program before going fu
  Both the structure and the language keywords should have been presented during the lecture.
  If you have questions, you can directly contact the supervisors.
 
-  - Extend the "Hello world" example by instantiating an object of the class **SenseHat** and by initializing it.
+  - Extend the "Hello world" example by instantiating an object of the class **SenseHat** and by **initializing** it (there is method for this).
   - Save the new source file as **main.cpp**.
-  - Compile the program linking the executable with the library **libSenseHat.so**.
+  - Compile the program linking the executable with the library **libSenseHat.so** and the **libRTIMULib.so**
   - "Automatize" the compilation by writing down the compilation commands in a bash script **mymake**. We will later learn how to create a **Makefile**
 
 #### Step 2.2: First acquisition program
@@ -99,7 +99,7 @@ At the end of each of them, you can compile and test our program before going fu
 
 ### Step 3: Exporting measurements
 
-It is often useful to disentangle the acquisition program from the data analysis one. The goal of the acquisition program FirstDAQExport.cc to be written is to store data in a given numerical format. 
+It is often useful to disentangle the acquisition program from the data analysis one. The goal of the acquisition program FirstDAQExport.cpp to be written is to store data in a given numerical format. 
 For the sake of simplicity, we will store the data in a CSV (Comma Separated Value) format. 
 This imply that variables of a given measurement (once per line) are separated by a comma.
 
@@ -112,7 +112,7 @@ This imply that variables of a given measurement (once per line) are separated b
      – both temperatures from the CPU and GPU of the Raspberry Pi [◦C]
   - Protect the code against unavailable measurement by adding a default value (-9999), allowing a offline treatment
   - Modify the program to write this functionnality as a function which takes as arguments the number of measurements and the delay.
-  - Split the project in 3 files: a file CSVExport.h and CSVExport.cc which contain respectively the prototype and the implementation of the function as well as a main program main.cpp which call the function.
+  - Split the project in 3 files: a file CSVExport.h and CSVExport.cpp which contain respectively the prototype and the implementation of the function as well as a main program main.cpp which call the function.
   - Write the compilation instructions in a script **mymake** and compile the project.
   - Test if the program is working properly. The integrity of the CSV file can even be tested by loading it with **OpenOffice Cal** (hint: change the delimeter for CSV file in the configuration to use "," and not ";").
 
