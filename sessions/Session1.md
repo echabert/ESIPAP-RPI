@@ -109,7 +109,7 @@ This imply that variables of a given measurement (once per line) are separated b
      - the relativity humidity
      - the temperature measured by the pressure sensor [◦C]
      – the temperature measured by the humidity sensor [◦C]
-     – both temperatures from the CPU and GPU of the Raspberry Pi [◦C]
+     – both temperatures from the ARM and GPU of the Raspberry Pi [◦C]
   - Protect the code against unavailable measurement by adding a default value (-9999), allowing a offline treatment
   - Modify the program to write this functionnality as a function which takes as arguments the number of measurements and the delay.
   - Split the project in 3 files: a file CSVExport.h and CSVExport.cpp which contain respectively the prototype and the implementation of the function as well as a main program main.cpp which call the function.
