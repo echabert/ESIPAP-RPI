@@ -43,7 +43,7 @@ it to the LEDs. 2 prototypes must be implemented: one where the array is in C-fo
 
 **Specifications:**
   - You must add a function *DisplayCharacter* which takes in argument a character which must be displayed at the
-screen with the good colors. For that, the developer needs to download the file font.h
+screen with the good colors. For that, the developer needs to download the file font.h [here](session2/font.h)
 from the ESIPAP indico and analyze it for understanding how to use it.
 	 
   - You must add a function *DisplaySentence* which takes in argument a std::string containing a sentence to dis-
