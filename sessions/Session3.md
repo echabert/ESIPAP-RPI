@@ -65,9 +65,9 @@ You need to modify system variable in order to allow the system to search for th
 
 While compiling the main program, you need to link the library:
 
-```g++ -L`pwd` -lESIPAP main.cc -o main```
+```g++ -o main  main.cpp -L`pwd` -lESIPAP```
 
-  assuming that the program is called main.cc and that the library is located on the current directory.
+  assuming that the program is called main.cpp and that the library is located on the current directory.
 
 The previous command lines may be changed in you use a different shell or if the library is located on a different directory.
 

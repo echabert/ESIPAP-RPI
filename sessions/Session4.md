@@ -88,7 +88,7 @@ Instead of using macros and CINT, we will now create an executable linked to ROO
    - Modify the content to have the **main** function, all headers should be properly included
    - Compile the program with the appropriate command
    ``` 
-      g++ main.cc `root-config --cflags --glibs` -o main 
+      g++ -o main main.cpp `root-config --cflags --glibs` 
    ```
       - **warning**: the file to be compiled should be at the beginning, after g++, otherwise it lead to a compilation error
       - root-config --cflags: needed to access the headers
