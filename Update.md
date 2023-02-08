@@ -11,3 +11,7 @@ For 2024, modifications should be made
  - step CSV: takes time
  - CPU --> ARM
  - give an example of CSV file
+ - change the order to simplify
+    - write a CVS file
+    - protect against wrong value
+    - externalize in a function
