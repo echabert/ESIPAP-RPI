@@ -39,7 +39,8 @@ In order to ease the realization of this computing session, it has been decompos
 
 The main goal is to create a new program with a main function aiming to read and analyze the data (temperature, pressure and humidity) supposely taken by the setup.
  - copy/paste the code developed during session 1 in order to read the temperature, pressure and humidity.
- - include in your project the three classes: **StatisticsCalculator**, **PsychrometricCalculator** and **PixelWriter**. Normally, you have developed one class during Session 2. The code of the two other classes must be borrowed from one of your colleagues (borrow the code but also the doxygen doc).
+ - include in your project the three classes: **StatisticsCalculator**, **PsychrometricCalculator** and **PixelWriter**. Normally, you have developed one class during Session 2. The code of the two other classes could be borrowed from one of your colleagues (borrow the code but also the doxygen doc).
+ In order to work with full classes, you can access to the solutions (3 classes) in [indico](https://indico.cern.ch/event/1226779/contributions/5168592/attachments/2590469/4470040/Session3.tar). 
  - at this step, it is advised to instantiate the classes **StatisticsCalculator**, **PsychrometricCalculator** and **PixelWriter** in your ``main`` program which read SenseHat senesors and try to build (compile) the whole project.
  - with the class **PsychometricCalculator**, compute for each measure the dry temperature and the vapour pressure on top of all the other variables (energies etc ). 
  - with the class **StatisticsCalculator**, compute the relevant statistical quantities (min, max, mean, median, rms, std-dev) and dump them first at the screen.
